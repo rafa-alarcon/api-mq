@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "2e514aa2-cb53-45ad-92ac-ff26830cbd5e",
+		"name": "leantech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET booking",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookingOwner\": \"string\",\r\n  \"checkInDate\": \"2021-08-13\",\r\n  \"checkOutDate\": \"2021-08-14\",\r\n  \"childNumber\": 0,\r\n  \"guestNumber\": 0,\r\n  \"id\": 2,\r\n  \"rooms\": 0,\r\n  \"totalDays\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/consultar-reserva",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"consultar-reserva"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookingOwner\": \"string\",\r\n  \"checkInDate\": \"2021-08-13\",\r\n  \"checkOutDate\": \"2021-08-13\",\r\n  \"childNumber\": 1,\r\n  \"guestNumber\": 2,\r\n  \"rooms\": 1,\r\n  \"totalDays\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/registrar-reserva",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registrar-reserva"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST invalid check out date",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookingOwner\": \"string\",\r\n  \"bookingOwnerEmail\": \"test@test.com\",\r\n  \"checkInDate\": \"2021-08-15\",\r\n  \"checkOutDate\": \"2021-08-16\",\r\n  \"childNumber\": 1,\r\n  \"guestNumber\": 2,\r\n  \"rooms\": 1,\r\n  \"totalDays\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/registrar-reserva",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registrar-reserva"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST invalid Guest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookingOwner\": \"string\",\r\n  \"checkInDate\": \"2021-08-13\",\r\n  \"checkOutDate\": \"2021-08-13\",\r\n  \"childNumber\": 1,\r\n  \"guestNumber\": 0,\r\n  \"rooms\": 1,\r\n  \"totalDays\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/registrar-reserva",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registrar-reserva"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
